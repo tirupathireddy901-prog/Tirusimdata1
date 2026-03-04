@@ -568,10 +568,10 @@
                 searchType = 'phone';
                 phoneOption.classList.add('active');
                 cnicOption.classList.remove('active');
-                searchInput.placeholder = 'ENTER 12-DIGIT PHONE NUMBER';
-                searchInput.maxLength = 12;
+                searchInput.placeholder = 'ENTER 10-DIGIT PHONE NUMBER';
+                searchInput.maxLength = 10;
                 searchInput.value = '';
-                resultContainer.innerHTML = '<div class="no-data">ENTER 12-DIGIT PHONE TO SCAN</div>';
+                resultContainer.innerHTML = '<div class="no-data">ENTER 10-DIGIT PHONE TO SCAN</div>';
             });
             
             cnicOption.addEventListener('click', function() {
@@ -602,11 +602,11 @@
                 // Phone number validation
                 if (searchType === 'phone') {
                     if (!/^\d+$/.test(searchValue)) {
-                        showValidationError('INVALID PHONE NUMBER', 'Phone number should contain only digits', '918123456789');
+                        showValidationError('INVALID PHONE NUMBER', 'Phone number should contain only digits', '0123456789');
                         return;
                     }
-                    if (searchValue.length !== 11) {
-                        showValidationError('INVALID PHONE NUMBER LENGTH', 'Phone number must be exactly 12 digits', '918123456789');
+                    if (searchValue.length !== 10) {
+                        showValidationError('INVALID PHONE NUMBER LENGTH', 'Phone number must be exactly 10 digits', '0123456789');
                         return;
                     }
                 }
